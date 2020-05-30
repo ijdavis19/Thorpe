@@ -1,0 +1,50 @@
+,id,homeTeam,awayTeam,awayScore,provider,spread,formattedSpread,overUnder
+0,401013088,Clemson,Furman,7,consensus,-50.5,Clemson -50.5,58.5
+1,401013169,Boston College,Clemson,27,teamrankings,17.5,Clemson -17.5,51.5
+2,401013169,Boston College,Clemson,27,numberfire,18,Clemson -18,51.5
+3,401013169,Boston College,Clemson,27,consensus,17.5,Clemson -17.5,51
+4,401013169,Boston College,Clemson,27,Caesars,17.5,Clemson -17.5,52
+5,401012270,Texas A&M,Clemson,28,teamrankings,12,Clemson -12,50.5
+6,401012270,Texas A&M,Clemson,28,numberfire,12,Clemson -12,51
+7,401012270,Texas A&M,Clemson,28,consensus,12.5,Clemson -12.5,51
+8,401012270,Texas A&M,Clemson,28,Caesars,12.5,Clemson -12.5,51
+9,401013110,Clemson,Georgia Southern,7,teamrankings,-31.5,Clemson -31.5,50
+10,401013110,Clemson,Georgia Southern,7,numberfire,-32,Clemson -32,49.5
+11,401013110,Clemson,Georgia Southern,7,consensus,-32,Clemson -32,49.5
+12,401013110,Clemson,Georgia Southern,7,Caesars,-32,Clemson -32,49.5
+13,401013120,Georgia Tech,Clemson,49,teamrankings,16,Clemson -16,55
+14,401013120,Georgia Tech,Clemson,49,numberfire,16,Clemson -16,55.5
+15,401013120,Georgia Tech,Clemson,49,consensus,16.5,Clemson -16.5,55
+16,401013120,Georgia Tech,Clemson,49,Caesars,16,Clemson -16,55
+17,401013131,Clemson,Syracuse,23,teamrankings,-24.5,Clemson -24.5,64.5
+18,401013131,Clemson,Syracuse,23,numberfire,-24.5,Clemson -24.5,65
+19,401013131,Clemson,Syracuse,23,consensus,-24.5,Clemson -24.5,64.5
+20,401013131,Clemson,Syracuse,23,Caesars,-24.5,Clemson -24.5,65.5
+21,401013140,Wake Forest,Clemson,63,teamrankings,20.5,Clemson -20.5,60
+22,401013140,Wake Forest,Clemson,63,numberfire,20.5,Clemson -20.5,61
+23,401013140,Wake Forest,Clemson,63,consensus,20.5,Clemson -20.5,61
+24,401013140,Wake Forest,Clemson,63,Caesars,20.5,Clemson -20.5,61.5
+25,401013149,Clemson,NC State,7,teamrankings,-17.5,Clemson -17.5,58
+26,401013149,Clemson,NC State,7,numberfire,-18,Clemson -18,58
+27,401013149,Clemson,NC State,7,consensus,-18.5,Clemson -18.5,57.5
+28,401013149,Clemson,NC State,7,Caesars,-19,Clemson -19,58
+29,401013162,Clemson,Louisville,16,teamrankings,-38,Clemson -38,61
+30,401013162,Clemson,Louisville,16,numberfire,-39,Clemson -39,61
+31,401013162,Clemson,Louisville,16,consensus,-38.5,Clemson -38.5,61
+32,401013162,Clemson,Louisville,16,Caesars,-39,Clemson -39,61.5
+33,401056697,Pittsburgh,Clemson,42,teamrankings,27,Clemson -27,53
+34,401056697,Pittsburgh,Clemson,42,numberfire,27.5,Clemson -27.5,52
+35,401056697,Pittsburgh,Clemson,42,consensus,28,Clemson -28,53
+36,401056697,Pittsburgh,Clemson,42,Caesars,28,Clemson -28,53
+37,401013176,Clemson,Duke,6,teamrankings,-29.5,Clemson -29.5,59
+38,401013176,Clemson,Duke,6,numberfire,-29.5,Clemson -29.5,60
+39,401013176,Clemson,Duke,6,consensus,-28,Clemson -28,58.5
+40,401013176,Clemson,Duke,6,Caesars,-28,Clemson -28,
+41,401012355,Clemson,South Carolina,35,teamrankings,-25.5,Clemson -25.5,58.5
+42,401012355,Clemson,South Carolina,35,numberfire,-26,Clemson -26,58.5
+43,401012355,Clemson,South Carolina,35,consensus,-26,Clemson -26,58.5
+44,401012355,Clemson,South Carolina,35,Caesars,-26,Clemson -26,58.5
+45,401013155,Florida State,Clemson,59,teamrankings,18,Clemson -18,49.5
+46,401013155,Florida State,Clemson,59,numberfire,18,Clemson -18,49.5
+47,401013155,Florida State,Clemson,59,consensus,18,Clemson -18,49.5
+48,401013155,Florida State,Clemson,59,Caesars,18,Clemson -18,49.5
