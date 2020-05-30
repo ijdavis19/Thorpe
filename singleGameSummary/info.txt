@@ -1,0 +1,18 @@
+Program will give a game summary for a given CFB game requested by the user. First the output will be printed directly in the terminal but eventually it'll be written to a Latex document.
+
+Part 1:
+	Finding out which game the user actually wants
+
+Part 2:
+	Getting all of the data collected in the proper data frames
+	
+		a. Game Summary
+
+		b. Team Stats
+
+		c. Individual Stats
+
+Part 3:
+	Writing the results
+
+
