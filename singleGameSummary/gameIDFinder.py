@@ -25,6 +25,6 @@ def gameIDFinder():
     week = int(week)
     gameID = dfTeam1Season['id'].iloc[week - 1]
 
-    return gameID
+    return gameID, yearInput
     
-gameIDFinder()
+#gameIDFinder()
