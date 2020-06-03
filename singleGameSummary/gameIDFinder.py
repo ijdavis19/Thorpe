@@ -22,9 +22,9 @@ def gameIDFinder():
     print(dfTeam1Season[['away_team','home_team','id']])
 
     week = input('Input Game Week: ')
-    week = int(week)
-    gameID = dfTeam1Season['id'].iloc[week - 1]
+    intWeek = int(week)
+    gameID = dfTeam1Season['id'].iloc[intWeek - 1]
 
-    return gameID, yearInput
+    return gameID, yearInput, week, team1
     
 #gameIDFinder()
