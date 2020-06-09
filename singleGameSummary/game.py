@@ -20,15 +20,12 @@ class Game(object):
         self.homeCoach = cfb.get_coach_info(team=self.homeTeam, year=self.year)['first_name'].iloc[0] + " " + cfb.get_coach_info(team=self.homeTeam, year=self.year)['last_name'].iloc[0]
         self.awayCoach = cfb.get_coach_info(team=self.awayTeam, year=self.year)['first_name'].iloc[0] + " " + cfb.get_coach_info(team=self.awayTeam, year=self.year)['last_name'].iloc[0]
 
-
         self.pairs = [("YEAR",str(self.year)),
                       ("WEEK",str(self.week)),
                       ("HOMETEAM",self.homeTeam),
                       ("AWAYTEAM",self.awayTeam),
-                      ("Venue",self.venue)
+                      ("VENUE",self.venue)
                       ]
-    
-
 
     # with open('output/singleGameSummary.tex', 'r') as file:
     #        inFile = file.readlines()
@@ -46,6 +43,14 @@ class Game(object):
             outFileList = " ".join(inFileList)
             outFile.write(outFileList+"\r\n")
         outFile.close()
+    
+    def singleGameFileName(self):
+        badfileString = "{} {} at {} {}".format(self.year, self.awayTeam, self.homeTeam, self.week)
+        fileList = badfileString.split()
+        outFileString = "".join(fileList)
+        return outFileString
+
+
         
 
         

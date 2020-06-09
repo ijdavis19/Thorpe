@@ -14,30 +14,32 @@ print("\nYear: {}".format(yearInput))
 
 thisGame = game.Game(year=yearInput, gameID=gameID, week=week, team=team1)
 
-print("\n")
-print("Home Team: {}".format(thisGame.homeTeam))
-print("Home Coach: {}".format(thisGame.homeCoach))
-print("Away Team: {}".format(thisGame.awayTeam))
-print("Away Coach: {}".format(thisGame.awayCoach))
-print("\n")
 print("Editing PDF...")
+
+outFileString = thisGame.singleGameFileName()
 
 with open('output/singleGameSummary.tex', 'r') as file:
     inFile = file.readlines()
 
 
 
-# NEED TO REDO STRINGS SO THE FIT COHERENT FILE FORMAT
-if os.path.isfile('output/testSum.tex'):
-    os.remove('output/testSum.tex')
+if os.path.isfile("{}.tex".format(outFileString)):
+    os.remove("{}.tex".format(outFileString))
 
-outFile = open('output/testSum.tex', 'w')
+outFile = open("{}.tex".format(outFileString), 'w')
 
 thisGame.writeToLatex(inFile=inFile, outFile=outFile, varlist=thisGame.pairs)
 
 
-if os.path.isfile('output/testSum.tex'):
+if os.path.isfile("{}.tex".format(outFileString)):
     print("File built successfully")
 
-os.system("pdflatex output/testSum.tex")
-os.system("xdg-open testSum.pdf")
+os.system("pdflatex {}.tex".format(outFileString))
+os.system("pdflatex {}.tex".format(outFileString))
+os.system("rm {}.out".format(outFileString))
+os.system("rm {}.log".format(outFileString))
+os.system("rm {}.aux".format(outFileString))
+os.system("rm {}.toc".format(outFileString))
+os.system("rm {}.tex".format(outFileString))
+os.system("mv {}.pdf output/".format(outFileString))
+os.system("xdg-open output/{}.pdf".format(outFileString))
