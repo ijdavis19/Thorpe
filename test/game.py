@@ -43,15 +43,9 @@ class Game(object):
             outFileList = " ".join(inFileList)
             outFile.write(outFileList+"\r\n")
         outFile.close()
-    
+
     def singleGameFileName(self):
         badfileString = "{} {} at {} {}".format(self.year, self.awayTeam, self.homeTeam, self.week)
         fileList = badfileString.split()
         outFileString = "".join(fileList)
         return outFileString
-
-
-        
-
-        
-
