@@ -1,0 +1,16 @@
+Need to built 3(4) distinct classes
+
+1) Game
+  - All the statistics of a given game
+  - Gives out stats for home team and away team
+  - Already done
+
+2) Week
+  - Creates and average/median team for a given week to make comparisons
+
+2.5) Season to Date
+  - Creates an average/median team for a given season up to a given week
+  - Rehashed for individual teams as well
+
+3) Season
+  - Same as Season to Date but for the entire season
