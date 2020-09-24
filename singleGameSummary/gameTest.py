@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 import pandas as pd
-import CFBScrapy as cfb 
+import CFBScrapy as cfb
 import game
 
 

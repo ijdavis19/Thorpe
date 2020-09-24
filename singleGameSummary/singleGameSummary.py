@@ -1,12 +1,11 @@
 #! /usr/bin/env python
 
 import pandas as pd
-import CFBScrapy as cfb 
+import CFBScrapy as cfb
 import game
 from gameIDFinder import gameIDFinder
 import io
 import os
-
 
 
 def main():
@@ -24,15 +23,13 @@ def main():
     with open('output/singleGameSummary.tex', 'r') as file:
         inFile = file.readlines()
 
-
-
     if os.path.isfile("{}.tex".format(outFileString)):
         os.remove("{}.tex".format(outFileString))
 
     outFile = open("{}.tex".format(outFileString), 'w')
 
-    thisGame.writeToLatex(inFile=inFile, outFile=outFile, varlist=thisGame.pairs)
-
+    thisGame.writeToLatex(inFile=inFile, outFile=outFile,
+                          varlist=thisGame.pairs)
 
     if os.path.isfile("{}.tex".format(outFileString)):
         print("File built successfully")
@@ -45,7 +42,8 @@ def main():
     os.system("rm {}.toc".format(outFileString))
     os.system("rm {}.tex".format(outFileString))
     os.system("mv {}.pdf output/".format(outFileString))
-    os.system("xdg-open output/{}.pdf".format(outFileString))
+    os.system("zathura output/{}.pdf".format(outFileString))
+
 
 if __name__ == '__main__':
     main()
