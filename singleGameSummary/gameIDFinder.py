@@ -5,13 +5,7 @@ import CFBScrapy as cfb
 
 
 def gameIDFinder():
-    yearInput = input("Enter year of interest: ")
-    yearInput = int(yearInput)
-
-    if yearInput >= 2000 & yearInput < 2020:
-        print(yearInput)
-    else:
-        print("Let's keep it between 2000 and 2019 for now.")
+    yearInput = int(input("Enter year of interest: "))
 
     team1 = input('Team One: ')
 
@@ -19,7 +13,7 @@ def gameIDFinder():
     weeks = dfTeam1Season['week'].tolist()
     dfTeam1Season.set_index('week', inplace=True)
 
-    print('Games played by {} in {}:'.format(yearInput, team1))
+    print('Games played by {} in {}:'.format(team1, yearInput))
     print(dfTeam1Season[['away_team', 'home_team', 'id']])
 
     week = int(input('Input Game Week: '))

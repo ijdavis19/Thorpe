@@ -19,15 +19,11 @@ class Game(object):
         self.homeTeam = self.gameInfo['home_team'].iloc[0]
         self.venue = self.gameInfo['venue'].iloc[0]
         self.genStats = cfb.get_game_team_stats(
-            year=self.year, gameId=self.gameID)
+            year=self.year, week=self.week, team=team)
         self.bets = cfb.get_betting_lines(
             year=self.year, week=self.week, home=self.homeTeam)
         self.players = cfb.get_game_player_stats(
             year=self.year, gameId=self.gameID)
-        self.homeCoach = cfb.get_coach_info(team=self.homeTeam, year=self.year)[
-            'first_name'].iloc[0] + " " + cfb.get_coach_info(team=self.homeTeam, year=self.year)['last_name'].iloc[0]
-        self.awayCoach = cfb.get_coach_info(team=self.awayTeam, year=self.year)[
-            'first_name'].iloc[0] + " " + cfb.get_coach_info(team=self.awayTeam, year=self.year)['last_name'].iloc[0]
 
         self.pairs = [("YEAR", str(self.year)),
                       ("WEEK", str(self.week)),
