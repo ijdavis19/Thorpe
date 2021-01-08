@@ -1,7 +1,12 @@
 #! /usr/bin/env python
 
 import pandas as pd
-import CFBScrapy as cfb
+import requests
+import json
+from pandas.io.json import json_normalize
+import sys
+sys.path.insert(1, '/home/ian/sources/CFBScrapy/CFBScrapy/')
+from cfbtools import *
 
 
 def gameIDFinder():
@@ -9,7 +14,7 @@ def gameIDFinder():
 
     team1 = input('Team One: ')
 
-    dfTeam1Season = cfb.get_game_info(year=yearInput, team=team1)
+    dfTeam1Season = get_game_info(year=yearInput, team=team1)
     weeks = dfTeam1Season['week'].tolist()
     dfTeam1Season.set_index('week', inplace=True)
 

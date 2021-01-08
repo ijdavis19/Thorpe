@@ -1,8 +1,14 @@
 #! /usr/bin/env python
 
 import pandas as pd
-import CFBScrapy as cfb
+import requests
+import json
+from pandas.io.json import json_normalize
+import sys
+sys.path.insert(1, '/home/ian/sources/CFBScrapy/CFBScrapy/')
+from cfbtools import *
 import io
+
 
 # 401237492
 
@@ -13,22 +19,39 @@ class Game(object):
         self.year = year
         self.gameID = gameID
         self.week = week
-        self.gameInfo = cfb.get_game_info(
+        self.gameInfo = get_game_info(
             year=self.year, week=self.week, team=team)
         self.awayTeam = self.gameInfo['away_team'].iloc[0]
+        self.awayScore = self.gameInfo['away_points'][0]
         self.homeTeam = self.gameInfo['home_team'].iloc[0]
+        self.homeScore = self.gameInfo['home_points'][0]
         self.venue = self.gameInfo['venue'].iloc[0]
-        self.genStats = cfb.get_game_team_stats(
+        self.genStats = get_game_team_stats(
             year=self.year, week=self.week, team=team)
-        self.bets = cfb.get_betting_lines(
+        self.bets = get_betting_lines(
             year=self.year, week=self.week, home=self.homeTeam)
-        self.players = cfb.get_game_player_stats(
+        self.players = get_game_player_stats(
             year=self.year, gameId=self.gameID)
+        if self.homeScore > self.awayScore:
+            self.winner = self.homeTeam
+            self.loser = self.awayTeam
+            self.winnerScore = self.homeScore
+            self.loserScore = self.awayScore
+
+        else:
+            self.winner = self.awayTeam
+            self.loser = self.homeTeam
+            self.winnerScore = self.awayScore
+            self.loserScore = self.homeScore
 
         self.pairs = [("YEAR", str(self.year)),
                       ("WEEK", str(self.week)),
                       ("HOMETEAM", self.homeTeam),
                       ("AWAYTEAM", self.awayTeam),
+                      ("WINNER", self.winner),
+                      ("LOSER", self.loser),
+                      ("WINNERSCORE", str(self.winnerScore)),
+                      ("LOSERSCORE", str(self.loserScore)),
                       ("VENUE", self.venue)
                       ]
 
@@ -55,3 +78,8 @@ class Game(object):
         fileList = badfileString.split()
         outFileString = "".join(fileList)
         return outFileString
+
+    def gameTest(self):
+        test = game.Game(year=2018, gameID=401013169, week=10, team='Clemson')
+        print("\n\nGame test successfully retrieved")
+        #print("\n{} vs. {}".format(sef))
