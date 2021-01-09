@@ -14,33 +14,36 @@ import os
 
 
 def main():
-    # dfGame = cfb.get_game_info(year=2015,week=5,team='Clemson')
     gameID, yearInput, week, team1 = gameIDFinder()
     print("\nGame ID: {}".format(gameID))
     print("\nYear: {}".format(yearInput))
-
     thisGame = game.Game(year=yearInput, gameID=gameID, week=week, team=team1)
-
     print("Editing PDF...")
 
+    # Game at a glance
+    with open('glanceTableTEMP.tex', 'r') as file:
+        glanceIn = file.readlines()
+    if os.path.isfile("glanceTable.tex"):
+        os.remove("glanceTable.tex")
+    glanceOut = open('glanceTable.tex', 'w')
+    thisGame.writeToLatex(inFile=glanceIn, outFile=glanceOut, varlist=thisGame.genPairs)
+
+    # Compile Master Template
     outFileString = thisGame.singleGameFileName()
-
-    with open('output/singleGameSummary.tex', 'r') as file:
+    with open('singleGameSummary.tex', 'r') as file:
         inFile = file.readlines()
-
     if os.path.isfile("{}.tex".format(outFileString)):
         os.remove("{}.tex".format(outFileString))
-
     outFile = open("{}.tex".format(outFileString), 'w')
-
     thisGame.writeToLatex(inFile=inFile, outFile=outFile,
-                          varlist=thisGame.pairs)
-
+                          varlist=thisGame.infoPairs)
     if os.path.isfile("{}.tex".format(outFileString)):
         print("File built successfully")
 
+    # Cleaning Up
     os.system("pdflatex {}.tex".format(outFileString))
     os.system("pdflatex {}.tex".format(outFileString))
+    os.system("rm glanceTable.tex")
     os.system("rm {}.out".format(outFileString))
     os.system("rm {}.log".format(outFileString))
     os.system("rm {}.aux".format(outFileString))
